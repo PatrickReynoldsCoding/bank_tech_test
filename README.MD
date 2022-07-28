@@ -32,6 +32,7 @@ npm init -y
 npm i jest eslint
 eslint --init 
 git init -y
+npm add --dev eslint eslint-plugin-jest
 ```
 added to scripts:
 ```
@@ -39,6 +40,14 @@ added to scripts:
     "lint": "eslint .",
     "test": "npm run lint && npm run test:unit",
     "test:unit": "jest"
+```
+added jest to .eslintrc.js
+```
+  env: {
+    browser: true,
+    commonjs: true,
+    es2021: true,
+    jest: true
 ```
 
 ## Model
