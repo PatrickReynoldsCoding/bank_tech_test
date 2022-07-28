@@ -26,6 +26,21 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
+## How I setup the project
+```
+npm init -y
+npm i jest eslint
+eslint --init 
+git init -y
+```
+added to scripts:
+```
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && npm run test:unit",
+    "test:unit": "jest"
+```
+
 ## Model
 
 This is the model drawn prior to beginning writing the code.

@@ -1,6 +1,5 @@
+describe('account class', () => {
+  it('shows the balance as 0', () => {
 
-describe("Bank app" , () => {
-
-
-  it(returns)
-});
+  })
+})
