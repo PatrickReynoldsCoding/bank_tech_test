@@ -26,6 +26,12 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
+## Model
+
+This is the model drawn prior to beginning writing the code.
+
+![Alt text](/assets/bank_tech_test1.png?raw=true "Optional Title")
+
 ## Tests
 
 ### Unit tests:
