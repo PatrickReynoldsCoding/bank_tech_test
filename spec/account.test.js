@@ -36,7 +36,7 @@ describe('Account class', () => {
     }])
   })
 
-  it('shows a statement header with just the transaction date beneath', () => {
+  xit('shows a statement header with just the transaction date beneath', () => {
     const mockedTransaction = {
       getDate: '01/05/2022',
       getAmount: 10
@@ -47,7 +47,7 @@ describe('Account class', () => {
     expect(account.statement()).toBe("date || credit || debit || balance\n01/05/2022")
   })
 
-  xit('shows a statement header with the transaction datebeneath', () => {
+  it('shows a statement header with the transaction beneath', () => {
     const mockedTransaction = {
       getDate: '01/05/2022',
       getAmount: 10
