@@ -31,7 +31,7 @@ date || credit || debit || balance
 ### Unit tests:
 
 #### ACCOUNT Class:
-
+```
 1.
 showBalance() => 0
 
@@ -64,19 +64,20 @@ date || credit || debit || balance
 mock transaction = new Transaction("01/05/2022", 10)
 mock transaction = new Transaction("02/05/2022", 20)
 mock transaction = new Transaction("03/05/2022", -2)
+
 statement() => 
 date || credit || debit || balance
 01/05/2022 || || 10 || 10
 02/05/2022 || || 10 || 20
 03/05/2022 || 2 ||  || 28
-
+```
 
 
 
 
 
 #### TRANSACTION Class:
-
+```
 1. 
 transaction = new Transaction("01/05/2022", 10)
 transaction.getDate() => "01/05/2022"
@@ -85,3 +86,5 @@ transaction.getDate() => "01/05/2022"
 2. 
 transaction = new Transaction("01/05/2022", 10)
 tranaction.amount() => 10
+
+```
