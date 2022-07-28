@@ -1,6 +1,9 @@
 const Account = require('../lib/account')
 
+
+
 describe('Account class', () => {
+
   it('shows the balance as 0', () => {
     const account = new Account()
 
@@ -33,7 +36,7 @@ describe('Account class', () => {
     }])
   })
 
-  it('shows a statement header with the transaction beneath', () => {
+  it('shows a statement header with just the transaction date beneath', () => {
     const mockedTransaction = {
       getDate: '01/05/2022',
       getAmount: 10
@@ -41,6 +44,17 @@ describe('Account class', () => {
     const account = new Account()
     account.newTransaction(mockedTransaction)
 
-    expect(account.statement()).toBe("date || credit || debit || balance\n'01/05/2022', 10")
+    expect(account.statement()).toBe("date || credit || debit || balance\n01/05/2022")
+  })
+
+  xit('shows a statement header with the transaction datebeneath', () => {
+    const mockedTransaction = {
+      getDate: '01/05/2022',
+      getAmount: 10
+    }
+    const account = new Account()
+    account.newTransaction(mockedTransaction)
+
+    expect(account.statement()).toBe("date || credit || debit || balance\n01/05/2022 || 10 ")
   })
 })

@@ -74,15 +74,21 @@ date || credit || debit || balance
 mock transaction = new Transaction("01/05/2022", 10)
 statement() => 
 date || credit || debit || balance
-"01/05/2022", 10
+01/05/2022
 
 4.
 mock transaction = new Transaction("01/05/2022", 10)
 statement() => 
 date || credit || debit || balance
-01/05/2022 || || 10 || 10
+01/05/2022 || 10
 
 5.
+mock transaction = new Transaction("01/05/2022", 10)
+statement() => 
+date || credit || debit || balance
+01/05/2022 || || 10 || 10
+
+6.
 mock transaction = new Transaction("01/05/2022", 10)
 mock transaction = new Transaction("02/05/2022", 20)
 statement() => 
@@ -90,7 +96,7 @@ date || credit || debit || balance
 01/05/2022 || || 10 || 10
 02/05/2022 || || 10 || 20
 
-6.
+7.
 mock transaction = new Transaction("01/05/2022", 10)
 mock transaction = new Transaction("02/05/2022", 20)
 mock transaction = new Transaction("03/05/2022", -2)
