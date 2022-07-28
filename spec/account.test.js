@@ -55,6 +55,7 @@ describe('Account class', () => {
     const account = new Account()
     account.newTransaction(mockedTransaction)
 
-    expect(account.statement()).toBe("date || credit || debit || balance\n01/05/2022 || 10 ")
+    expect(account.statement()).toBe("date || credit || debit || balance\n01/05/2022 || 10 || || 10")
   })
+  
 })
