@@ -27,8 +27,52 @@ date || credit || debit || balance
 ```
 
 ## How to run the project
+```
+npm install
+
+```
+Then, open the node REPL and type the following:
+
+Require the classes:
+```
+const Account = require("./account");
+const Transaction = require("./transaction");
+
+```
+Create some transactions:
+```
+const transaction = new Transaction("01/05/2022", 10);
+const transaction2 = new Transaction("02/05/2022", 20);
+const transaction3 = new Transaction("05/05/2022", -2);
+const transaction4 = new Transaction("07/05/2022", -5.5);
+
+```
+
+Initialize an account and add these tranactions:
+
+```
+const account = new Account();
+account.newTransaction(transaction);
+account.newTransaction(transaction2);
+account.newTransaction(transaction3);
+account.newTransaction(transaction4);
+
+```
+
+Finally, run statement() to get your statement
+
+```
+account.statement()
+
+```
+
+Alternatively, run './lib/example.js' to see the code working
 
 
+## How I would have improved the project
+
+1. call reverse() on the map function to make my transactions show reverse chronology.
+2. Test further edge cases such as throwing an error if wrong object or data type was passed to the classes.
 
 ## How I installed the project
 ```
