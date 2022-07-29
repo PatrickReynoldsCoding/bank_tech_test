@@ -164,7 +164,7 @@ describe('Account class', () => {
     account.newTransaction(mockedTransaction)
     account.newTransaction(mockedTransaction2)
 
-    expect(account.statement()).toBe('date || credit || debit || balance\n01/05/2022 || 10 || || 10\n02/05/2022 || 20 || || 30')
+    expect(account.statement()).toBe('date || credit || debit || balance\n01/05/2022 || 10 || || 10\n02/05/2022 || 20 || || 30\n')
   })
   xit('shows a statement header with three transactions summed beneath', () => {
     const mockedTransaction = {
