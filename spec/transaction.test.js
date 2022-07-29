@@ -7,4 +7,11 @@ describe('Transaction class', () => {
     expect(transaction.date).toBe('01/05/2022')
   })
 
+  it('returns the amount', () => {
+    const transaction = new Transaction('01/05/2022', 10)
+
+    expect(transaction.amount).toBe(10.00)
+  })
+
+
 })
