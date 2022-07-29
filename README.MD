@@ -108,10 +108,6 @@ date || credit || debit || balance
 03/05/2022 || 2 ||  || 28
 ```
 
-
-
-
-
 #### TRANSACTION Class:
 ```
 1. 
@@ -124,3 +120,12 @@ transaction = new Transaction("01/05/2022", 10)
 tranaction.amount() => 10
 
 ```
+
+##### Edge cases
+ACCOUNT
+Decimals (working)
+Subtraction (working)
+Wrong data/object type for transaction (not sure how to test)
+
+TRANSACTION
+leaving properties blank (not-tested)

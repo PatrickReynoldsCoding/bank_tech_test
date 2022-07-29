@@ -138,6 +138,19 @@ describe('Account class', () => {
   })
 
 
+
+  //NOTE TO COACH: not sure how to test this as a transactionVerification function would check for properties in the mock, but would need to check for functions in the final code
+  // it('pass wrong object type to account', () => {
+  //   const mockedTransaction = {
+  //     getDate: '01/05/2022',
+  //     getAmount: 10
+  //   }
+
+  //   const account = new Account()
+
+  //   expect(account.transactionVerification(mockedTransaction)).toBeTruthy()
+  // })
+
   xit('shows a statement header with two transactions summed beneath', () => {
     const mockedTransaction = {
       getDate: '01/05/2022',
