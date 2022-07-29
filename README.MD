@@ -26,7 +26,11 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
-## How I setup the project
+## How to run the project
+
+
+
+## How I installed the project
 ```
 npm init -y
 npm i jest eslint
