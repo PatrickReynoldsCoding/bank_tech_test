@@ -151,7 +151,7 @@ describe('Account class', () => {
   //   expect(account.transactionVerification(mockedTransaction)).toBeTruthy()
   // })
 
-  xit('shows a statement header with two transactions summed beneath', () => {
+  it('shows a statement header with two transactions summed beneath', () => {
     const mockedTransaction = {
       getDate: '01/05/2022',
       getAmount: 10
@@ -166,4 +166,26 @@ describe('Account class', () => {
 
     expect(account.statement()).toBe('date || credit || debit || balance\n01/05/2022 || 10 || || 10\n02/05/2022 || 20 || || 30')
   })
+  xit('shows a statement header with three transactions summed beneath', () => {
+    const mockedTransaction = {
+      getDate: '01/05/2022',
+      getAmount: 10
+    }
+    const mockedTransaction2 = {
+      getDate: '02/05/2022',
+      getAmount: 20
+    }
+    const mockedTransaction3 = {
+      getDate: '05/05/2022',
+      getAmount: -2
+    }
+
+    const account = new Account()
+    account.newTransaction(mockedTransaction)
+    account.newTransaction(mockedTransaction2)
+    account.newTransaction(mockedTransaction3)
+
+    expect(account.statement()).toBe('date || credit || debit || balance\n01/05/2022 || 10 || || 10\n02/05/2022 || 20 || || 30\n05/05/2022 || || 2 || 28')
+  })
+
 })
