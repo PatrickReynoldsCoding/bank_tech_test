@@ -107,6 +107,37 @@ describe('Account class', () => {
     expect(account.showTransactions()[2]).toMatchObject({ getDate: '05/05/2022', getAmount: -2, balanceAfterTransaction: 28 })
   })
 
+  it('shows balanceAfterTransaction summing after each transaction, 4 examples', () => {
+    const mockedTransaction = {
+      getDate: '01/05/2022',
+      getAmount: 10
+    }
+    const mockedTransaction2 = {
+      getDate: '02/05/2022',
+      getAmount: 20
+    }
+    const mockedTransaction3 = {
+      getDate: '05/05/2022',
+      getAmount: -2
+    }
+    const mockedTransaction4 = {
+      getDate: '07/05/2022',
+      getAmount: -5.5
+    }
+
+
+    const account = new Account()
+    account.newTransaction(mockedTransaction)
+    account.newTransaction(mockedTransaction2)
+    account.newTransaction(mockedTransaction3)
+    account.newTransaction(mockedTransaction4)
+    expect(account.showTransactions()[0]).toMatchObject({ getDate: '01/05/2022', getAmount: 10, balanceAfterTransaction: 10 })
+    expect(account.showTransactions()[1]).toMatchObject({ getDate: '02/05/2022', getAmount: 20, balanceAfterTransaction: 30 })
+    expect(account.showTransactions()[2]).toMatchObject({ getDate: '05/05/2022', getAmount: -2, balanceAfterTransaction: 28 })
+    expect(account.showTransactions()[3]).toMatchObject({ getDate: '07/05/2022', getAmount: -5.5, balanceAfterTransaction: 22.5 })
+  })
+
+
   xit('shows a statement header with two transactions summed beneath', () => {
     const mockedTransaction = {
       getDate: '01/05/2022',
