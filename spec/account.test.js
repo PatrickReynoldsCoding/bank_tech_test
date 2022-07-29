@@ -21,22 +21,22 @@ describe('Account class', () => {
 
   xit('shows a transaction', () => {
     const mockedTransaction = {
-      getDate: '01/05/2022',
-      getAmount: 10
+      date: '01/05/2022',
+      amount: 10
     }
     const account = new Account()
     account.newTransaction(mockedTransaction)
 
     expect(account.showTransactions()).toEqual([{
-      getDate: '01/05/2022',
-      getAmount: 10
+      date: '01/05/2022',
+      amount: 10
     }])
   })
 
   xit('shows a statement header with just the transaction date beneath', () => {
     const mockedTransaction = {
-      getDate: '01/05/2022',
-      getAmount: 10
+      date: '01/05/2022',
+      amount: 10
     }
     const account = new Account()
     account.newTransaction(mockedTransaction)
@@ -46,8 +46,8 @@ describe('Account class', () => {
 
   xit('shows a statement header with the transaction beneath', () => {
     const mockedTransaction = {
-      getDate: '01/05/2022',
-      getAmount: 10
+      date: '01/05/2022',
+      amount: 10
     }
     const account = new Account()
     account.newTransaction(mockedTransaction)
@@ -57,72 +57,72 @@ describe('Account class', () => {
 
   it('shows a transaction with the property balanceAfterTransaction', () => {
     const mockedTransaction = {
-      getDate: '01/05/2022',
-      getAmount: 10
+      date: '01/05/2022',
+      amount: 10
     }
 
     const account = new Account()
     account.newTransaction(mockedTransaction)
-    expect(account.showTransactions()[0]).toMatchObject({ getDate: '01/05/2022', getAmount: 10, balanceAfterTransaction: 10 })
+    expect(account.showTransactions()[0]).toMatchObject({ date: '01/05/2022', amount: 10, balanceAfterTransaction: 10 })
   })
 
   it('shows balanceAfterTransaction summing after each transaction', () => {
     const mockedTransaction = {
-      getDate: '01/05/2022',
-      getAmount: 10
+      date: '01/05/2022',
+      amount: 10
     }
     const mockedTransaction2 = {
-      getDate: '02/05/2022',
-      getAmount: 20
+      date: '02/05/2022',
+      amount: 20
     }
 
     const account = new Account()
     account.newTransaction(mockedTransaction)
     account.newTransaction(mockedTransaction2)
-    expect(account.showTransactions()[0]).toMatchObject({ getDate: '01/05/2022', getAmount: 10, balanceAfterTransaction: 10 })
-    expect(account.showTransactions()[1]).toMatchObject({ getDate: '02/05/2022', getAmount: 20, balanceAfterTransaction: 30 })
+    expect(account.showTransactions()[0]).toMatchObject({ date: '01/05/2022', amount: 10, balanceAfterTransaction: 10 })
+    expect(account.showTransactions()[1]).toMatchObject({ date: '02/05/2022', amount: 20, balanceAfterTransaction: 30 })
   })
 
 
   it('shows balanceAfterTransaction summing after each transaction, 3 examples', () => {
     const mockedTransaction = {
-      getDate: '01/05/2022',
-      getAmount: 10
+      date: '01/05/2022',
+      amount: 10
     }
     const mockedTransaction2 = {
-      getDate: '02/05/2022',
-      getAmount: 20
+      date: '02/05/2022',
+      amount: 20
     }
     const mockedTransaction3 = {
-      getDate: '05/05/2022',
-      getAmount: -2
+      date: '05/05/2022',
+      amount: -2
     }
 
     const account = new Account()
     account.newTransaction(mockedTransaction)
     account.newTransaction(mockedTransaction2)
     account.newTransaction(mockedTransaction3)
-    expect(account.showTransactions()[0]).toMatchObject({ getDate: '01/05/2022', getAmount: 10, balanceAfterTransaction: 10 })
-    expect(account.showTransactions()[1]).toMatchObject({ getDate: '02/05/2022', getAmount: 20, balanceAfterTransaction: 30 })
-    expect(account.showTransactions()[2]).toMatchObject({ getDate: '05/05/2022', getAmount: -2, balanceAfterTransaction: 28 })
+    expect(account.showTransactions()[0]).toMatchObject({ date: '01/05/2022', amount: 10, balanceAfterTransaction: 10 })
+    expect(account.showTransactions()[1]).toMatchObject({ date: '02/05/2022', amount: 20, balanceAfterTransaction: 30 })
+    expect(account.showTransactions()[2]).toMatchObject({ date: '05/05/2022', amount: -2, balanceAfterTransaction: 28 })
   })
 
   it('shows balanceAfterTransaction summing after each transaction, 4 examples', () => {
     const mockedTransaction = {
-      getDate: '01/05/2022',
-      getAmount: 10
+      date: '01/05/2022',
+      amount: 10
     }
     const mockedTransaction2 = {
-      getDate: '02/05/2022',
-      getAmount: 20
+      date: '02/05/2022',
+      amount: 20
     }
     const mockedTransaction3 = {
-      getDate: '05/05/2022',
-      getAmount: -2
+      date: '05/05/2022',
+      amount: -2
     }
     const mockedTransaction4 = {
-      getDate: '07/05/2022',
-      getAmount: -5.5
+      date: '07/05/2022',
+      amount: -5.5
     }
 
 
@@ -131,10 +131,10 @@ describe('Account class', () => {
     account.newTransaction(mockedTransaction2)
     account.newTransaction(mockedTransaction3)
     account.newTransaction(mockedTransaction4)
-    expect(account.showTransactions()[0]).toMatchObject({ getDate: '01/05/2022', getAmount: 10, balanceAfterTransaction: 10 })
-    expect(account.showTransactions()[1]).toMatchObject({ getDate: '02/05/2022', getAmount: 20, balanceAfterTransaction: 30 })
-    expect(account.showTransactions()[2]).toMatchObject({ getDate: '05/05/2022', getAmount: -2, balanceAfterTransaction: 28 })
-    expect(account.showTransactions()[3]).toMatchObject({ getDate: '07/05/2022', getAmount: -5.5, balanceAfterTransaction: 22.5 })
+    expect(account.showTransactions()[0]).toMatchObject({ date: '01/05/2022', amount: 10, balanceAfterTransaction: 10 })
+    expect(account.showTransactions()[1]).toMatchObject({ date: '02/05/2022', amount: 20, balanceAfterTransaction: 30 })
+    expect(account.showTransactions()[2]).toMatchObject({ date: '05/05/2022', amount: -2, balanceAfterTransaction: 28 })
+    expect(account.showTransactions()[3]).toMatchObject({ date: '07/05/2022', amount: -5.5, balanceAfterTransaction: 22.5 })
   })
 
 
@@ -142,8 +142,8 @@ describe('Account class', () => {
   //NOTE TO COACH: not sure how to test this as a transactionVerification function would check for properties in the mock, but would need to check for functions in the final code
   // it('pass wrong object type to account', () => {
   //   const mockedTransaction = {
-  //     getDate: '01/05/2022',
-  //     getAmount: 10
+  //     date: '01/05/2022',
+  //     amount: 10
   //   }
 
   //   const account = new Account()
@@ -153,12 +153,12 @@ describe('Account class', () => {
 
   it('shows a statement header with two transactions summed beneath', () => {
     const mockedTransaction = {
-      getDate: '01/05/2022',
-      getAmount: 10
+      date: '01/05/2022',
+      amount: 10
     }
     const mockedTransaction2 = {
-      getDate: '02/05/2022',
-      getAmount: 20
+      date: '02/05/2022',
+      amount: 20
     }
     const account = new Account()
     account.newTransaction(mockedTransaction)
@@ -168,16 +168,16 @@ describe('Account class', () => {
   })
   it('shows a statement header with three transactions summed beneath', () => {
     const mockedTransaction = {
-      getDate: '01/05/2022',
-      getAmount: 10
+      date: '01/05/2022',
+      amount: 10
     }
     const mockedTransaction2 = {
-      getDate: '02/05/2022',
-      getAmount: 20
+      date: '02/05/2022',
+      amount: 20
     }
     const mockedTransaction3 = {
-      getDate: '05/05/2022',
-      getAmount: -2
+      date: '05/05/2022',
+      amount: -2
     }
 
     const account = new Account()
@@ -190,20 +190,20 @@ describe('Account class', () => {
   
   it('shows a statement header with four transactions summed beneath', () => {
     const mockedTransaction = {
-      getDate: '01/05/2022',
-      getAmount: 10
+      date: '01/05/2022',
+      amount: 10
     }
     const mockedTransaction2 = {
-      getDate: '02/05/2022',
-      getAmount: 20
+      date: '02/05/2022',
+      amount: 20
     }
     const mockedTransaction3 = {
-      getDate: '05/05/2022',
-      getAmount: -2
+      date: '05/05/2022',
+      amount: -2
     }
     const mockedTransaction4 = {
-      getDate: '07/05/2022',
-      getAmount: -5.5
+      date: '07/05/2022',
+      amount: -5.5
     }
 
 
